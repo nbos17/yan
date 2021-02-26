@@ -79,6 +79,7 @@
     </div>
   </body>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://unpkg.com/imagesloaded@4/imagesloaded.pkgd.js"></script>
   <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
   <script>
   
@@ -112,7 +113,7 @@
       $('.slick-prev').css('display', 'none');
     });
 
-    $(document).ready(() => {
+    $(document).imagesLoaded(() => {
       $('#slider').slick({
         slidesToShow: 1.2,
         slidesToScroll: 1,

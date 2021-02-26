@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Gift Layout"
+    />
+    <title>Gift Layout</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="container">
+        <div class="inner">
+          <div class="header-row">
+            <div class="header-row__left">Gallery</div>
+            <div class="header-row__right"><img src="hamburger.1c.png" alt="hamburger" class="icon"></div>
+          </div>
+          <div class="image-row" id="slider">
+            <div class="image-holder">
+              <img src="bg4a.png">
+            </div>
+            <div class="image-holder">
+              <img src="bg4b.png">
+            </div>
+            <div class="image-holder">
+              <img src="bg4c.png">
+            </div>
+            <div class="image-holder">
+              <img src="bg5c.png">
+            </div>
+          </div>
+          <div class="content-row">
+            <h2>Upcoming Events</h2>
+            <div class="image-holder-row">
+              <div class="image-block" style="width: 25%"><img src="v.1.png"><p>Vertical</p></div>
+              <div class="image-block" style="width: 45%"><img src="h.2.png"><p>Horizontal</p></div>
+              <div class="image-block" style="width: 35%;"><img src="s.3.png"><p>Square</p></div>
+            </div>
+          </div>
+          <div class="content-row">
+            <h2>Past Events</h2>
+            <div class="image-holder-row-block">
+              <div class="content-block">Insert Content Here</div>
+              <div class="image-holder">Image</div>
+            </div>
+            <div class="image-holder-row-block">
+              <div class="image-holder">Image</div>
+              <div class="content-block">Insert Content Here</div>
+            </div>
+            <div class="image-holder-row-block">
+              <div class="content-block">Insert Content Here</div>
+              <div class="image-holder">Image</div>
+            </div>
+          </div>
+          <div class="menu">
+            <div class="top">Gallery</div>
+            <div class="bottom">
+              <!-- <img src="times-solid.svg" alt="close" class="close"> -->
+              <div class="left"></div>
+              <div class="divide"></div>
+              <div class="right">
+                <ul>
+                  <li class="active-list-item"><strong>Home</strong></li>
+                  <li>About</li>
+                  <li>Exhibitions</li>
+                  <li>Past Events</li>
+                  <li>Artists</li>
+                  <li>Contact</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+  <script>
+  
+    $('.icon').click(function click() {
+      $('.menu').css('display', 'block');
+      $('.slick-arrow').css('display', 'none');
+      $('.header-row__left').text('');
+    });
+
+    $('.divide').click(function close() {
+      $('.menu').css('display', 'none');
+      $('.slick-arrow').css('display', 'block');
+      $('.header-row__left').text('Gallery');
+    });
+
+    $('#slider').on('beforeChange', function(event, slick, currentSlide, nextSlide){
+      if (nextSlide === 3) {
+        $('.slick-next').css('display', 'none');
+      } else {
+        $('.slick-next').css('display', 'block');
+      }
+
+      if (nextSlide === 0) {
+        $('.slick-prev').css('display', 'none');
+      } else {
+        $('.slick-prev').css('display', 'block');
+      }
+    });
+
+    $('#slider').on('init', function(event, slick, currentSlide, nextSlide) {
+      $('.slick-prev').css('display', 'none');
+    });
+
+    $(document).ready(() => {
+      $('#slider').slick({
+        slidesToShow: 1.2,
+        slidesToScroll: 1,
+        infinite: false,
+        lazyLoad: 'progressive',
+        centerMode: true,
+        centerPadding: '0px',
+        prevArrow: '<button type="button" class="slick-prev"><img src="arrow-R.png"></button>',
+        nextArrow: '<button type="button" class="slick-next"><img src="arrow-L.png"></button>',
+        responsive: [
+          {
+            breakpoint: 500,
+            settings: {
+              slidesToShow: 1,
+              slidesToScroll: 1,
+              centerMode: false,
+            }
+          }
+        ]
+      });
+    });
+
+
+  </script>
+</html>

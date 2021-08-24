@@ -1,141 +1,240 @@
-<!DOCTYPE html>
-<html lang="en">
+
+<html>
   <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta
-      name="description"
-      content="Gift Layout"
-    />
-    <title>Gift Layout</title>
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Ubuntu&display=swap" rel="stylesheet">
+  <title>Contact Form v2</title>
+  <style>
+  body {
+    font-family: 'Ubuntu', sans-serif;
+    margin: 0;
+  }
+  * {box-sizing: border-box;}
+  
+  /* Style inputs with type="text", select elements and textareas */ 
+  input[type=text], input[type=number], select, textarea {
+    width: 100%;
+    padding: 12px;
+    border: 3px solid blue;
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin-top: 6px;
+    margin-bottom: 16px;
+    resize: vertical;
+  }
+
+  textarea {
+    box-sizing: border-box;
+    font-family: 'Ubuntu', sans-serif;
+  }
+
+  #contact-form {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+  }
+
+  label {
+    width: 100%;
+  }
+  
+  /* Style the submit button with a specific background color etc */
+  input[type=submit] {
+    background-color: #04AA6D;
+    color: white;	
+    padding: 15px 40px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    -webkit-appearance: none;
+  }
+  
+  /* When moving the mouse over the submit button, add a darker green color */
+  input[type=submit]:hover {
+    background-color: #45a049;
+  }
+  
+  /* Add a background color and some padding around the form */
+  .container {
+    border-radius: 5px;  			
+    background-color: #fff;	
+    padding: 20px 20px 120px 20px;
+    box-shadow: 0px 14px 28px rgba(0, 0, 0, 0.15), 0px 3px 10px rgba(0, 0, 0, 0.12);
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+
+  select {
+    -moz-appearance: none; 
+    -webkit-appearance: none;
+    background-size: 12px;
+    background-position: calc(100% - 20px) center;
+    background-repeat: no-repeat;
+    background-color: #fff;
+    appearance: none;
+  }
+
+  form {
+    background-color: pink;
+    padding: 20px 30px;
+    border-radius: 5px;
+  }
+
+  h1 {
+    margin-top: 0px;
+    margin-bottom: 20px;
+  }
+  .background {
+    background-color: rgba(0,0,0,0.3);
+    padding: 20px;
+    height: 100%;
+  }
+
+  @media (max-width: 500px) {
+    .background {
+      height: 100vh;
+      padding: 10px;
+    }
+
+    #contact-form {
+      display: block;
+    }
+
+    .container {
+      padding-bottom: 20px;
+      padding-left: 15px;
+      padding-right: 15px;
+    }
+
+    form {
+      padding: 20px;
+    }
+
+    input,
+    select,
+    textarea {
+      font-size: 16px;
+    }
+
+    input[type=submit] {
+      width: 100%;
+    }
+  }
+
+  </style>
   </head>
   <body>
-    <div class="wrapper">
-      <div class="container">
-        <div class="inner">
-          <div class="header-row">
-            <div class="header-row__left">Gallery</div>
-            <div class="header-row__right"><img src="images/hamburger.1c.png" alt="hamburger" class="icon"></div>
-          </div>
-          <div class="image-row" id="slider">
-            <div class="image-holder">
-              <img src="images/bg4a.png">
-            </div>
-            <div class="image-holder">
-              <img src="images/bg4b.png">
-            </div>
-            <div class="image-holder">
-              <img src="images/bg4c.png">
-            </div>
-            <div class="image-holder">
-              <img src="images/bg5c.png">
-            </div>
-          </div>
-          <div class="content-row">
-            <h2>Upcoming Events</h2>
-            <div class="image-holder-row">
-              <div class="image-block" style="width: 25%"><img src="images/v.1.png"><p>Vertical</p></div>
-              <div class="image-block" style="width: 45%"><img src="images/h.2.png"><p>Horizontal</p></div>
-              <div class="image-block" style="width: 35%;"><img src="images/s.3.png"><p>Square</p></div>
-            </div>
-          </div>
-          <div class="content-row">
-            <h2>Past Events</h2>
-            <div class="image-holder-row-block">
-              <div class="content-block">Insert Content Here</div>
-              <div class="image-holder">Image</div>
-            </div>
-            <div class="image-holder-row-block">
-              <div class="image-holder">Image</div>
-              <div class="content-block">Insert Content Here</div>
-            </div>
-            <div class="image-holder-row-block">
-              <div class="content-block">Insert Content Here</div>
-              <div class="image-holder">Image</div>
-            </div>
-          </div>
-          <div class="menu">
-            <div class="top">Gallery</div>
-            <div class="bottom">
-              <!-- <img src="times-solid.svg" alt="close" class="close"> -->
-              <div class="left"></div>
-              <div class="divide"></div>
-              <div class="right">
-                <ul>
-                  <li class="active-list-item"><strong>Home</strong></li>
-                  <li>About</li>
-                  <li>Exhibitions</li>
-                  <li>Past Events</li>
-                  <li>Artists</li>
-                  <li>Contact</li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+  <div class="background">
+    <div class="container">
+      <h1>Contact Form</h1>
+      <!-- <p>test</p> -->
+      <form id="contact-form">
+        <label for="fname">First Name</label>
+        <input type="text" id="fname" name="firstname" placeholder="Your first name..">
+    
+        <label for="lname">Last Name</label>
+        <input type="text" id="lname" name="lastname" placeholder="Your last name..">
+
+        <label for="lname">Email</label>
+        <input type="text" id="email" name="email" placeholder="Your Email...">
+    
+        <label for="country">Country</label>
+        <select id="country" name="country">
+          <option value="conutry" selected>Your Country...</option>
+          <option value="usa">United States</option>
+          <option value="australia">Australia</option>
+          <option value="canada">Canada</option>
+        </select>
+    
+        <label for="subject">Subject</label>
+        <textarea id="subject" name="subject" placeholder="Write something..."></textarea>
+
+    
+        
+        <div class="g-recaptcha" data-sitekey="6Lc_p5sbAAAAAPGSdlnOMqrFs-4z9yeEnbCW8tjJ"></div>
+        <input type="submit" value="Submit" id="submit">
+        <div class="message-status"></div>
+
+      </form>
     </div>
-  </body>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script src="https://unpkg.com/imagesloaded@4/imagesloaded.pkgd.js"></script>
-  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
-  <script>
   
-    $('.icon').click(function click() {
-      $('.menu').css('display', 'block');
-      $('.slick-arrow').css('display', 'none');
-      $('.header-row__left').text('');
-    });
-
-    $('.divide').click(function close() {
-      $('.menu').css('display', 'none');
-      $('.slick-arrow').css('display', 'block');
-      $('.header-row__left').text('Gallery');
-    });
-
-    $('#slider').on('beforeChange', function(event, slick, currentSlide, nextSlide){
-      if (nextSlide === 3) {
-        $('.slick-next').css('display', 'none');
-      } else {
-        $('.slick-next').css('display', 'block');
-      }
-
-      if (nextSlide === 0) {
-        $('.slick-prev').css('display', 'none');
-      } else {
-        $('.slick-prev').css('display', 'block');
-      }
-    });
-
-    $('#slider').on('init', function(event, slick, currentSlide, nextSlide) {
-      $('.slick-prev').css('display', 'none');
-    });
-
-    $(document).imagesLoaded(() => {
-      $('#slider').slick({
-        slidesToShow: 1.2,
-        slidesToScroll: 1,
-        infinite: false,
-        lazyLoad: 'progressive',
-        centerMode: true,
-        centerPadding: '0px',
-        prevArrow: '<button type="button" class="slick-prev"><img src="images/arrow-R.png"></button>',
-        nextArrow: '<button type="button" class="slick-next"><img src="images/arrow-L.png"></button>',
-        responsive: [
-          {
-            breakpoint: 500,
-            settings: {
-              slidesToShow: 1,
-              slidesToScroll: 1,
-              centerMode: false,
-            }
-          }
-        ]
-      });
-    });
-
-
+  </div>
+  </body>
+  </html>
+  <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+    <script type="text/javascript">
+    (function() {
+    emailjs.init("user_Mr4g7RMWO4VsBD6JpzRop");
+    })();
   </script>
-</html>
+
+  <script src='https://code.jquery.com/jquery-3.3.1.min.js' integrity='sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=' crossorigin='anonymous'></script>
+  <script>
+    function onSubmit(token) {
+      document.getElementById("contact-form").submit();
+    }
+  </script>
+  <script>
+    $('#submit').on('click', function(e) {
+      e.preventDefault();
+  
+      const firstName = $('#fname').val();
+      const lastName = $('#lname').val();
+      const emailAddress = $('#email').val()
+      const country = $('#country').val();
+      const comment = $('textarea').val();
+
+  
+      const template_params = {
+          "first_name": firstName,
+          "last_name": lastName,
+          "from_email": emailAddress,
+          "from_phone": country,
+          "message_html": comment,
+      }
+
+      console.log(template_params);
+  
+      const service_id = "default_service";
+      const template_id = "second_contact_template";
+      emailjs.send(service_id,template_id,template_params)
+        .then(function(response) {
+            console.log('SUCCESS!', response.status, response.text);
+            $('.message-status').text('Message Sent!')
+        }, function(error) {
+            console.log('FAILED...', error);
+        });
+  });
+
+  $(function(){
+    function rescaleCaptcha(){
+      var width = $('.g-recaptcha').parent().width();
+      var scale;
+      if (width < 302) {
+        scale = width / 302;
+      } else{
+        scale = 1.0; 
+      }
+  
+      $('.g-recaptcha').css('transform', 'scale(' + scale + ')');
+      $('.g-recaptcha').css('-webkit-transform', 'scale(' + scale + ')');
+      $('.g-recaptcha').css('transform-origin', '0 0');
+      $('.g-recaptcha').css('-webkit-transform-origin', '0 0');
+    }
+  
+    rescaleCaptcha();
+    $( window ).resize(function() { rescaleCaptcha(); });
+  
+  });
+  
+  </script>
+  
+  
+  </body>
+  </html>
+  
